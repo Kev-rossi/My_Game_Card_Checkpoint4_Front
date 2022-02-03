@@ -1,25 +1,40 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const PlayerConnect = ({ connect, setConnect}) => {
-  const{Gamer_tag, setGamer_tag} = useState('');
-const {email, setEmail} = useState('');
-const {password, setPassword} = useState('');
+export const PlayerConnect = ({ connect, setConnect}) => {
+const [Gamer_tag, setGamer_tag] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
 const [error, setError] = useState('');
 const [validPassword, setValidPassword] = useState('');
+const [players, setPlayers] = useState('');
 
+useEffect(() => {
+  axios.get('http://localhost:5000/players')
+  .then(({data}) => {
+    setPlayers(data)
+  })
+}, [])
+console.log(players);
 
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
   if (password !== validPassword) {
     setError('Mot de passe incorrect');
-    return null;
   }
-  const body = { Gamer_tag, email, password };
-const response = await axios.post
-('http//localhost:5000/players', body);
-if(response.data.error) setError(response.data.error);
-else window.location.href = '/';
+  else {
+    const body = {
+      Gamer_tag: Gamer_tag,
+      email: email,
+      password: password
+    };
+    const url= 'http://localhost:5000/players';
+    axios.post(url, body)
+    .then(({data}) => {
+      if(data.error) setError(data.error);
+    })
+    console.log(url);
+  }
 };
 
 return (
@@ -30,15 +45,13 @@ return (
         tabIndex={0}
         onClick={() => setConnect(false)}
       ></div>
-      <h2 className="connect-title">Inscription</h2>
+      <h2 className="connect-title">Register</h2>
       <form className="connect-form" onSubmit={handleSubmit}>
         <div className="connect-line">
-          <label htmlFor="password">Prénom</label>
+          <label htmlFor="password">Gamer Tag</label>
           <input
             className="connect-input"
             type="text"
-            name="password"
-            id="password"
             value={Gamer_tag}
             required
             onChange={(e) => setGamer_tag(e.target.value)}
@@ -49,20 +62,16 @@ return (
           <input
             className="connect-input"
             type="text"
-            name="email"
-            id="email"
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="connect-line-password">
+        <div className="register-line-password">
           <label htmlFor="password">Mot de passe</label>
           <input
-            className="connect-input"
+            className="register-input"
             type="password"
-            name="password"
-            id="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
@@ -73,8 +82,6 @@ return (
           <input
             className="connect-input"
             type="password"
-            name="password"
-            id="password"
             value={validPassword}
             required
             onChange={(e) => setValidPassword(e.target.value)}
