@@ -1,7 +1,12 @@
-import axios from "axios";
+import '../styles/playerConnect.css';
 import { useEffect, useState } from "react";
+import axios from "axios";
+import {BsController} from 'react-icons/bs'
+import {AiOutlineMail} from 'react-icons/ai';
+import {RiLockPasswordLine} from 'react-icons/ri';
 
-export const PlayerConnect = ({ connect, setConnect}) => {
+
+export const PlayerConnect = ({ visible, setVisible}) => {
 const [Gamer_tag, setGamer_tag] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
@@ -32,23 +37,25 @@ const handleSubmit = (e) => {
     axios.post(url, body)
     .then(({data}) => {
       if(data.error) setError(data.error);
-    })
-    console.log(url);
+    });
   }
 };
 
 return (
-  <div className={connect ? 'connect-window' : 'connect-hidden'}>
+  <div className={visible ? 'connect-window' : 'connect-hidden'}>
       <div
         className="connect-close"
         role="button"
         tabIndex={0}
-        onClick={() => setConnect(false)}
+        onClick={() => setVisible(false)}
       ></div>
       <h2 className="connect-title">Register</h2>
       <form className="connect-form" onSubmit={handleSubmit}>
         <div className="connect-line">
+          <div className='label'> 
           <label htmlFor="password">Gamer Tag</label>
+          <BsController />
+          </div>
           <input
             className="connect-input"
             type="text"
@@ -58,7 +65,10 @@ return (
           />
         </div>
         <div className="connect-line">
+          <div className='label'>
           <label htmlFor="email">Email</label>
+          <AiOutlineMail />
+          </div>
           <input
             className="connect-input"
             type="text"
@@ -68,7 +78,10 @@ return (
           />
         </div>
         <div className="register-line-password">
+          <div className='label'>
           <label htmlFor="password">Mot de passe</label>
+          <RiLockPasswordLine />
+          </div>
           <input
             className="register-input"
             type="password"
@@ -78,7 +91,10 @@ return (
           />
         </div>
         <div className="connect-line-password">
-          <label htmlFor="password">Mot de passe</label>
+          <div className='label'>
+          <label htmlFor="password">Vérification</label>
+          <RiLockPasswordLine />
+          </div>
           <input
             className="connect-input"
             type="password"
@@ -88,7 +104,7 @@ return (
           />
         </div>
         <button className="connect-button" type="submit">
-          Connect
+          Let's Play
         </button>
         {error && <p className="connect-error">{error}</p>}
       </form>
