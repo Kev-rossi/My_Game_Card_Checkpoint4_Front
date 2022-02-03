@@ -1,0 +1,87 @@
+.connect-window {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transition: 1s;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.726);
+  text-align: center;
+  padding:25px;
+}
+
+.connect-hidden {
+  position: absolute;
+  top: -300px;
+  left:50%;
+  transition: 1s;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding:25px;
+}
+
+.connect-close {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.4;
+}
+.connect-close:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.connect-close:before, .connect-close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+.connect-close:before {
+  transform: rotate(45deg);
+}
+.connect-close:after {
+  transform: rotate(-45deg);
+}
+
+.connect-form {
+  height: 400px;
+  width:300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 450px) {
+  .connect-title{
+    font-size: 1.25em;
+  }
+
+  .connect-form {
+    width: 250px;
+  }
+
+  .connect-window {
+    padding: 10px;
+  }
+
+  .connect-close {
+    top:5px;
+  }
+
+  .connect-close:before, .connect-close:after {
+    height: 25px;
+  }
+}
+
+@media (max-width:350px) {
+  .connect-form {
+    width:200px;
+  }
+  .connect-window {
+    padding: 5px;
+  }
+}
