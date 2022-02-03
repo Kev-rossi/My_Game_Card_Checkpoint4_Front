@@ -49,7 +49,8 @@ return (
         tabIndex={0}
         onClick={() => setVisible(false)}
       ></div>
-      <h2 className="connect-title">Register</h2>
+      <h2 className="connect-title">REGISTER</h2>
+      <div className='allForm'>
       <form className="connect-form" onSubmit={handleSubmit}>
         <div className="connect-line">
           <div className='label'> 
@@ -108,6 +109,7 @@ return (
         </button>
         {error && <p className="connect-error">{error}</p>}
       </form>
+      </div>
     </div>
 );
 };
