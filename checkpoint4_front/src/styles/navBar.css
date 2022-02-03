@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@300&family=Playfair+Display&display=swap');
+
+body{
+  background-image: url("../../BorrelMenu.jpg");
+  background-position:top;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 80%;
+}
+
+/* .navbar {
+  position: absolute;
+  width: fit-content;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right:auto;
+} */
+
+.first-title-nav{
+  display: flex;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.select-nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.158);
+  margin-left: auto;
+  margin-right: auto;
+  width:fit-content;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 70px;
+  border-radius: 50px;
+} */

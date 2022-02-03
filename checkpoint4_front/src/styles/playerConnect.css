@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@300&family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Murecho:wght@300&family=Playfair+Display&display=swap');
 
+body{
+  background-image: url("../../dojo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+}
 
 .connect-title{
   text-align: center;
-  font-family: 'Murecho', sans-serif;
-font-family: 'Playfair Display', serif;
+  margin-top: 110px;
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: rgb(129 127 91);
+  text-shadow: #342f1d 4px 2px;
 }
 
 .connect-form{
@@ -18,12 +30,10 @@ font-family: 'Playfair Display', serif;
 .label{
   display: flex;
   justify-content:space-between;
-  margin-top: 1em;
+  margin-top: 15px;
   width: 100%;
-  font-family: 'Architects Daughter', cursive;
-  font-family: 'Murecho', sans-serif;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 25px;
+  color: azure;
 }
 
 .icon{
@@ -34,20 +44,22 @@ font-family: 'Playfair Display', serif;
 .connect-input{
   margin-top: 1em;
   border-radius: 10px;
+  border-color: black;
 }
 
 .register-input{
   margin-top: 1em;
   border-radius: 10px;
+  border-color: black;
 }
 
 .connect-button{
   border-style: double;
   border-radius: 20px;
   width: 15%;
-  margin-top: 1em;
-  font-family: 'Murecho', sans-serif;
-  font-family: 'Playfair Display', serif;
+  margin-top: 15px;
   font-size: 20px;
+  border-color: black;
+  color: black;
 
 }
