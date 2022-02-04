@@ -1,5 +1,5 @@
 import './styles/App.css';
-import PlayerConnect from './components/PlayerConnect';
+import PlayerRegister from './components/PlayerRegister';
 // import Navbar from './components/NavBar';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <PlayerConnect />
+      <PlayerRegister />
     </div>
   )
 }

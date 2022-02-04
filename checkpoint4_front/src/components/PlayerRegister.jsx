@@ -1,4 +1,4 @@
-import '../styles/playerConnect.css';
+import '../styles/playerRegister.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {BsController} from 'react-icons/bs'
@@ -6,7 +6,7 @@ import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordLine} from 'react-icons/ri';
 
 
-export const PlayerConnect = ({ visible, setVisible}) => {
+export const PlayerRegister = ({ visible, setVisible}) => {
 const [Gamer_tag, setGamer_tag] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
@@ -114,4 +114,4 @@ return (
 );
 };
 
-export default PlayerConnect;
+export default PlayerRegister;
